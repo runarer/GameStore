@@ -2,8 +2,8 @@
 
 GET {{basesettings}}/games
 
-###
-GET {{basesettings}}/games/1
+### Game does not exist
+GET {{basesettings}}/games/5
 
 ###
 POST {{basesettings}}/games
