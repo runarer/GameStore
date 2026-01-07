@@ -21,10 +21,21 @@ PUT {{basesettings}}/games/1
 Content-Type: application/json
 
 {
-"name": "Street Fighter II Turbo",
-"genre": "Fighting",
-"price": 9.99,
-"releaseDate": "1992-07-15"
+    "name": "Street Fighter II Turbo",
+    "genre": "Fighting",
+    "price": 9.99,
+    "releaseDate": "1992-07-15"
+}
+
+### PUT Not Found
+PUT {{basesettings}}/games/5
+Content-Type: application/json
+
+{
+    "name": "Street Fighter II Turbo",
+    "genre": "Fighting",
+    "price": 9.99,
+    "releaseDate": "1992-07-15"
 }
 
 ###
