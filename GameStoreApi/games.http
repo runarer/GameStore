@@ -4,3 +4,14 @@ GET {{basesettings}}/games
 
 ###
 GET {{basesettings}}/games/1
+
+###
+POST {{basesettings}}/games
+Content-Type: application/json
+
+{
+    "name" : "Super Mario Bros. Wonder",
+    "genra" : "Platformer",
+    "price" : 59.99,
+    "releaseDate" : "2023-10-20"
+}
