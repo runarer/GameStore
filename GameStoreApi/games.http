@@ -1,0 +1,3 @@
+@basesettings = http://localhost:5289
+
+GET {{basesettings}}/games
