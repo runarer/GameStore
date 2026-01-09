@@ -3,7 +3,7 @@
 GET {{basesettings}}/games
 
 ### Game does not exist
-GET {{basesettings}}/games/5
+GET {{basesettings}}/games/2
 
 ###
 POST {{basesettings}}/games
@@ -22,8 +22,8 @@ Content-Type: application/json
 
 {
     "name": "Street Fighter II Turbo",
-    "genre": "Fighting",
-    "price": 9.99,
+    "genreId": 1,
+    "price": 19.99,
     "releaseDate": "1992-07-15"
 }
 
@@ -40,3 +40,14 @@ Content-Type: application/json
 
 ###
 DELETE {{basesettings}}/games/1
+
+###
+POST {{basesettings}}/games
+Content-Type: application/json
+
+{
+    "name": "Street Fighter II Turbo",
+    "genreId": 1,
+    "price": 9.99,
+    "releaseDate": "1992-07-15"
+}
