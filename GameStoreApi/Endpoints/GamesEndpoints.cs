@@ -72,20 +72,19 @@ public static class GamesEndpoints
 
 
         // PUT /games/{id}
-        group.MapPut("/{id}", (int id,UpdateGameDto updatedGame) =>
+        group.MapPut("/{id}", async (int id,UpdateGameDto updatedGame,GameStoreContext dbContext) =>
         {
-            var index = games.FindIndex( game => game.Id == id);
+            var game = await dbContext.Games.FindAsync(id);
 
-            if (index == -1)
+            if (game is null)
                 return Results.NotFound();
 
-            games[index] = new GameSummaryDto(
-                id, 
-                updatedGame.Name, 
-                updatedGame.Genre,
-                updatedGame.Price,
-                updatedGame.ReleaseDate
-            );
+            game.Name = updatedGame.Name;
+            game.GenreId = updatedGame.GenreId;
+            game.Price = updatedGame.Price;
+            game.ReleaseDate = updatedGame.ReleaseDate;
+
+            await dbContext.SaveChangesAsync();
 
             return Results.NoContent();
         });
