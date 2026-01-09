@@ -5,7 +5,7 @@ namespace GameStoreApi.Endpoints;
 
 public static class GamesEndpoints
 {
-    private const string GetGameEndPointName = "GetGame";
+    const string GetGameEndPointName = "GetGame";
     private static readonly List<GameDto> games = [
         new(1, "Street Fighter II", "Fighting", 19.99M,new DateOnly(1992,7,15)),
         new(2, "Final Fantasy VII Rebirth", "RPG", 69.99M,new DateOnly(2024,2,29)),
