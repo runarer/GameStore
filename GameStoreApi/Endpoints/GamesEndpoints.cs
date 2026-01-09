@@ -19,7 +19,7 @@ public static class GamesEndpoints
     {
         var group = app.MapGroup("/games");
         // GET /games
-        group.MapGet("/games", async (GameStoreContext dbContext) 
+        group.MapGet("/", async (GameStoreContext dbContext) 
             => await dbContext.Games
                                 .Include(game => game.Genre)
                                 .Select(game => new GameSummaryDto(
