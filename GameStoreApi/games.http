@@ -51,3 +51,6 @@ Content-Type: application/json
     "price": 9.99,
     "releaseDate": "1992-07-15"
 }
+
+###
+GET {{basesettings}}/genres
